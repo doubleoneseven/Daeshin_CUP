@@ -1,0 +1,490 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    /* Added font setting */
+    background-color: black;
+}
+
+p { 
+    color: white;
+}
+
+#bar {
+    height: 26px;
+    background-color: black;
+}
+
+#header {
+    height: 100px;
+    background-color: #1C1C1C;
+}
+
+#menu {
+    height: 46px;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+#logo {
+    margin-top: 0px;
+    text-align: center;
+    filter: invert(100%);
+}
+
+#menu>ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    line-height: 45px;
+    color: white;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+}
+
+#menu a:visited {
+    color: white;
+}
+
+#menu li {
+    margin-left: 240px;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+}
+
+#menu li:nth-of-type(1) {
+    margin-left: 0;
+}
+
+.outer {
+    position: absolute;
+    width: 100%;
+    /* This height remains the same */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* Ensure vertical overflow doesn't occur */
+}
+
+.inner-list {
+    display: flex;
+    margin: 0;
+    transition: 0.3s ease-out;
+    width: fit-content;
+    height: 100%;
+}
+
+.inner {
+    width: 100%;
+    /* Ensure each inner takes full width */
+    height: 100%;
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+.inner img {
+    width: 100%;
+    /* 이미지의 가로 크기를 자동으로 조정 */
+    height: 100%;
+    /* 이미지의 세로 크기를 100%로 조정하여 가로 비율 유지 */
+    margin: 0;
+}
+
+/* Dropdown Button Container */
+.dropdown-container {
+    display: flex;
+    justify-content: center;
+    /* Align items in the center horizontally */
+    flex-wrap: nowrap;
+    /* Prevent wrapping of dropdowns */
+    margin-left: 200px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 13px;
+    width: 110%;
+    font-size: 13px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 200px;
+    /* Increase the interval between dropdowns */
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 16px 30px;
+    font-size: small;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: black;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: gray;
+}
+
+
+
+
+.schedule-container {
+    display: flex;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    /* 수직 가운데 정렬 */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+
+.game {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* 모바일 화면에서 줄 바꿈을 위해 추가 */
+}
+
+.game-details {
+    margin: 10px;
+    /* 모바일 화면에서 간격 조정 */
+}
+
+.play-detail {
+    font-size:x-small;
+    margin-bottom: -10px;
+    text-align: center;
+}
+.team-logo {
+    width: 50px;
+    height: auto;
+    margin-top: 0px;
+}
+
+.thumbnail {
+    width: 200px;
+    height: auto;
+    margin-left: 30px;
+    /* 모바일 화면에서 간격 조정 */
+}
+
+@media only screen and (max-width: 600px) {
+    .game {
+        flex-direction: column;
+        /* 모바일 화면에서 세로 방향으로 변경 */
+        align-items: center;
+    }
+
+    .game-details {
+        text-align: center;
+        /* 모바일 화면에서 가운데 정렬 */
+        position: relative;
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .game-details p {
+        margin: 0;
+        /* Remove default paragraph margin */
+    }
+
+    .team-logo {
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .thumbnail {
+        margin: 10px auto;
+        /* 모바일 화면에서 가운데 정렬 */
+    }
+
+    #menu {
+        height: auto;
+    }
+
+    #menu>ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .dropdown-container {
+        margin: 0;
+    }
+
+    .dropdown {
+        margin: 10px 0;
+
+    }
+
+    .button-list {
+        padding: 0;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .button-left,
+    .button-right {
+        position: static;
+    }
+
+    #swipe {
+        padding-top: 60px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .game {
+        flex-direction: column;
+        /* 모바일 화면에서 세로 방향으로 변경 */
+        align-items: center;
+    }
+
+    .game-details {
+        text-align: center;
+        /* 모바일 화면에서 가운데 정렬 */
+        position: relative;
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .game-details p {
+        margin: 0;
+        /* Remove default paragraph margin */
+    }
+
+    .team-logo {
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .thumbnail {
+        margin: 10px auto;
+        /* 모바일 화면에서 가운데 정렬 */
+    }
+
+    #menu {
+        height: auto;
+    }
+
+    #menu>ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .dropdown-container {
+        margin: 0;
+    }
+
+    .dropdown {
+        margin: 10px 0;
+
+    }
+
+    .button-list {
+        padding: 0;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .button-left,
+    .button-right {
+        position: static;
+    }
+
+    #swipe {
+        padding-top: 60px;
+    }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .game {
+        flex-direction: column;
+        /* 모바일 화면에서 세로 방향으로 변경 */
+        align-items: center;
+    }
+
+    .game-details {
+        text-align: center;
+        /* 모바일 화면에서 가운데 정렬 */
+        position: relative;
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .game-details p {
+        margin: 0;
+        /* Remove default paragraph margin */
+    }
+
+    .team-logo {
+        margin: 5px;
+        /* 모바일 화면에서 간격 조정 */
+    }
+
+    .thumbnail {
+        margin: 10px auto;
+        /* 모바일 화면에서 가운데 정렬 */
+    }
+
+    #menu {
+        height: auto;
+    }
+
+    #menu>ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .dropdown-container {
+        margin: 0;
+    }
+
+    .dropdown {
+        margin: 10px 0;
+
+    }
+
+    .button-list {
+        padding: 0;
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .button-left,
+    .button-right {
+        position: static;
+    }
+
+    #swipe {
+        padding-top: 60px;
+    }
+
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tbl-header {
+    background-color: #353131;
+}
+
+.tbl-content {
+    height: 500px;
+    overflow-x: auto;
+    margin-top: 0px;
+}
+
+th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 12px;
+    color: #fff;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+#tbl-container{
+    background: #544d4d;
+    font-family: 'Roboto', sans-serif;
+}
+
+section {
+    margin: 50px;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+#team-section {
+    text-align: center;
+}
+
+.team-member {
+    display: inline-block;
+    margin: 20px;
+}
+
+.leader {
+    margin-bottom: 40px; /* Adjust margin to create space below the team leader */
+}
+
+.teamimg{
+    height: 150px; width: 150px;
+}

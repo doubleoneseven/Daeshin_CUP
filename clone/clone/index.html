@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5BKPMDPN');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSCUP</title>
+    <link rel="stylesheet" href="design.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body data-theme="dark">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BKPMDPN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="wrap-main">
+        <div id="bar"></div>
+        <div id="header">
+            <div id="logo">
+                <a href="index.html"><img src="./logo/logo.png" style="width: 160px;"></a>
+            </div>
+        </div>
+
+        <div id="menu">
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <button class="dropbtn">공지사항</button>
+                    <div class="dropdown-content">
+                        <a href="list.html">공지사항</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">일정/결과</button>
+                    <div class="dropdown-content">
+                        <a href="kickoff.html">일정/결과</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">토너먼트</button>
+                    <div class="dropdown-content">
+                        <a href="class.html">학급별 정보</a>
+                        <a href="schedule.html">대진표</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">제작진</button>
+                    <div class="dropdown-content">
+                        <a href="aboutus.html">F5</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="swipe">
+            <div class="outer">
+                <div class="inner-list">
+                    <div class="inner">
+                        <img src="./banner/bannner.png">
+                    </div>
+                    <div class="inner">
+                        <img src="./banner/banner-1.png">
+                    </div>
+                    <div class="inner">
+                        <img src="./banner/banner-2.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const outer = document.querySelector('.outer');
+        const innerList = document.querySelector('.inner-list');
+        const inners = document.querySelectorAll('.inner');
+        let currentIndex = 0; // 현재 슬라이드 화면 인덱스
+
+        inners.forEach((inner) => {
+            inner.style.width = `${outer.clientWidth - 10}px`; // inner의 width를 모두 outer의 width로 만들기
+        })
+
+        innerList.style.width = `${outer.clientWidth * inners.length - 10}px`; // innerList의 width를 inner의 width * inner의 개수로 만들기
+
+        function slideTo(index) {
+            const newPosition = -outer.clientWidth * index;
+            innerList.style.transition = 'transform 0.5s ease';
+            innerList.style.transform = `translateX(${newPosition}px)`;
+        }
+
+        // 자동 슬라이드 기능 추가
+        let intervalId = setInterval(() => {
+            currentIndex = (currentIndex + 1) % inners.length;
+            slideTo(currentIndex);
+        }, 4000);
+
+        // 마우스가 슬라이드 영역에 들어오면 자동 슬라이드 멈추기
+        outer.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+        });
+
+        // 마우스가 슬라이드 영역에서 나가면 자동 슬라이드 다시 시작
+        outer.addEventListener('mouseleave', () => {
+            intervalId = setInterval(() => {
+                currentIndex = (currentIndex + 1) % inners.length;
+                slideTo(currentIndex);
+            }, 4000);
+        });
+    </script>
+    <div style="background-color: black;">
+    <section style="margin-top:25%;" id="tbl-container">
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Class</th>
+                        <th>Name</th>
+                        <th>Goal</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2-6</td>
+                        <td>박민우</td>
+                        <td>3</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2-3</td>
+                        <td>박준서</td>
+                        <td>3</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>3</td>
+                        <td>2-1</td>
+                        <td>채  준</td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>3</td>
+                        <td>2-7</td>
+                        <td>김민재</td>
+                        <td>2</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>2-6</td>
+                        <td>송호성</td>
+                        <td>2</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-6</td>
+                        <td>이준혁</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-9</td>
+                        <td>박시옥</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-1</td>
+                        <td>이상준</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-2</td>
+                        <td>신효철</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-3</td>
+                        <td>홍은혁</td>
+                        <td>1</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>5</td>
+                        <td>2-7</td>
+                        <td>황지후</td>
+                        <td>1</td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>2-1</td>
+                        <td>최민규</td>
+                        <td>1</td>
+                    </tr>
+                
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+</body>
+
+</html>
